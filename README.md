@@ -6,3 +6,9 @@ features/: Each feature of your app, like order forms or product tables, gets it
 hooks/: Custom React hooks for shared logic across components.
 pages/: Represents the different pages of your application. Each file here corresponds to a route in your app.
 utils/: Dedicated to external interactions like API calls. Keeping your API logic here helps maintain separation of concerns.
+
+
+
+
+TODO
+Move basket to a seperate react context

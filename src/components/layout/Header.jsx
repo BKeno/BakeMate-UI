@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           >
             <svg
-              className="w-6 h-6 text-bakery-brown hover:text-bakery-gold hover:bg-opacity-50"
+              className="w-6 h-6 text-bakery-brown hover:text-bakery-cream hover:bg-opacity-50"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -31,21 +31,21 @@ const Header = () => {
       <div className={`${isNavExpanded ? "block" : "hidden"} px-4 py-2`}>
         <Link
           to="/"
-          className="block py-2 px-4 text-sm text-grey-800 hover:text-white hover:bg-bakery-gold hover:bg-opacity-50"
+          className="block py-2 px-4 text-sm text-grey-800 hover:text-bakery-brown hover:bg-bakery-cream hover:bg-opacity-50"
           onClick={() => setIsNavExpanded(false)}
         >
           Home
         </Link>
         <Link
           to="/products"
-          className="block py-2 px-4 text-sm text-grey-800 hover:text-white hover:bg-bakery-gold hover:bg-opacity-50"
+          className="block py-2 px-4 text-sm text-grey-800 hover:text-bakery-brown hover:bg-bakery-cream hover:bg-opacity-50"
           onClick={() => setIsNavExpanded(false)}
         >
           Products
         </Link>
         <Link
           to="/ordercreate"
-          className="block py-2 px-4 text-sm text-grey-800 hover:text-white hover:bg-bakery-gold hover:bg-opacity-50"
+          className="block py-2 px-4 text-sm text-grey-800 hover:text-bakery-brown hover:bg-bakery-cream hover:bg-opacity-50"
           onClick={() => setIsNavExpanded(false)}
         >
           Create Order
