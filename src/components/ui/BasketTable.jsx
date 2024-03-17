@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 const BasketTable = ({ basket, removeFromBasket }) => {
   return (
     <div className="overflow-x-auto w-full mt-7">
-      <table className="table w-full">
+      <table className="table w-full table-xs">
         {/* Table head */}
         <thead className="text-bakery-brown">
           <tr className="border-b-2 border-bakery-cream">
             <th className="font-semibold uppercase p-2">Name</th>
             <th className="font-semibold uppercase p-2">Quantity</th>
-            <th className="font-semibold uppercase p-2">Total Price</th>
+            <th className="font-semibold uppercase p-2">Price</th>
             <th className="font-semibold uppercase p-2">Actions</th>
           </tr>
         </thead>

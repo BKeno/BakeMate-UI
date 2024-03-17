@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // Base URL of your Express.js API
-const API_BASE_URL = 'http://localhost:3000'; // Adjust the port if necessary
+const API_BASE_URL = 'http://192.168.0.206:3000'; // Adjust the port if necessary
 
 /**
  * Fetch products from the API.

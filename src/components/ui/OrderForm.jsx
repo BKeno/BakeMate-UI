@@ -73,7 +73,7 @@ const OrderForm = ({ products, addToBasket, basket }) => {
           <input
             type="number"
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e) => setQuantity(Number(e.target.value))}
             className="input input-bordered w-full bg-white bg-opacity-20 border-primary focus:border-bakery-focus focus:outline-none"
             min="1"
           />

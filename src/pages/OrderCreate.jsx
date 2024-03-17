@@ -41,8 +41,9 @@ const OrderCreate = () => {
 const orderDetails = {
   order: basket.map(item => ({
     Date: new Date().toISOString(), // or use a selectedDate state if you have a date picker in the form
-    orderingPerson: 'testUser',     // or the actual user identifier if available
+    orderingPerson: 'Gergő (Déryné Konyha)',     // or the actual user identifier if available
     productId: item.id,
+    productName: item.name,
     quantity: item.quantity
   }))
 };
