@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // PAGES
 import Products from "./pages/Products";
 import OrderCreate from "./pages/OrderCreate";
+import InvoiceCreate from "./pages/InvoiceCreate";
+import OrdersList from "./pages/OrdersList";
+import InvoicesList from "./pages/InvoicesList";
 import Home from "./pages/Home";
 
 // COMPONENTS
@@ -26,6 +29,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/ordercreate" element={<OrderCreate />} />
+            <Route path="/orderslist" element={<OrdersList />} />
+            <Route path="/invoicecreate" element={<InvoiceCreate />} />
+            <Route path="/invoiceslist" element={<InvoicesList />} />
             {/* Define other routes */}
           </Routes>
         </div>

@@ -19,7 +19,7 @@ const ProductsTable = ({ products }) => {
           {products.map((product, index) => (
             <tr key={index} className="border-b border-bakery-cream">
               <td>{product.name}</td>
-              <td>{product.price}</td>
+              <td className="text-right">{product.price}</td>
               {/* Add more product details as needed */}
             </tr>
           ))}

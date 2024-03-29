@@ -1,33 +1,32 @@
-// pages/OrderCreate.jsx
+// pages/InvoiceCreate.jsx
 
-import { useState } from 'react';
-import Card from '../components/ui/Card';
-import OrderForm from '../components/ui/OrderForm';
-import BasketTable from '../components/ui/BasketTable';
-import { addOrder } from '../utils/api'; 
+import { useState } from "react";
+import Card from "../components/ui/Card";
+import OrderForm from "../components/ui/OrderForm";
+import BasketTable from "../components/ui/BasketTable";
+import { addInvoice } from "../utils/api";
 import { useProducts } from '../hooks/useProducts';
 
 /**
- * This page component is responsible for creating new orders.
- * It utilizes the useProducts hook to fetch and display products.
- * Users can add products to a basket and submit the order.
+ * This page component is responsible for creating new invoices.
+ * It leverages the useProducts hook for fetching product data from the API.
+ * Users can select products to add to a basket and submit an invoice.
  * It manages the state for the basket, selected date, and loading status.
  */
-const OrderCreate = () => {
+const InvoiceCreate = () => {
+  // Using the useProducts hook to manage fetching products
+  const { products, loading, error } = useProducts();
+
   // State for the basket and loading indicator
   const [basket, setBasket] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // useProducts hook to manage fetching products
-  const { products, loading, error } = useProducts();
-
-  // Handler to remove a product from the basket
+  // Handlers for the basket functionality
   const removeFromBasket = (productId) => {
     setBasket(basket.filter((item) => item.id !== productId));
   };
 
-  // Handler to add a product to the basket
   const addToBasket = (product, quantity) => {
     const newProduct = {
       ...product,
@@ -37,8 +36,8 @@ const OrderCreate = () => {
     setBasket([...basket, newProduct]);
   };
 
-  // Handler to send the order
-  const handleSendOrder = async () => {
+  // Handler for creating an invoice
+  const handleCreateInvoice = async () => {
     if (basket.length === 0) {
       alert("Basket is empty.");
       return;
@@ -46,24 +45,25 @@ const OrderCreate = () => {
 
     setIsLoading(true); // Activate loader
 
-    // Construct the order details
-    const orderDetails = {
-      order: basket.map((item) => ({
+    // Construct the invoice details
+    const invoiceDetails = {
+      invoice: basket.map((item) => ({
         Date: selectedDate,
-        orderingPerson: "Gergő", // or the actual user identifier if available
+        invoicingPerson: "Gergő", // Update as necessary
         productId: item.id,
         productName: item.name,
         quantity: item.quantity,
+        price: item.price
       })),
     };
 
     try {
-      const response = await addOrder(orderDetails);
+      const response = await addInvoice(invoiceDetails); // Adjust API call
       alert(response.message);
-      setBasket([]); // Reset basket after successful order creation
+      setBasket([]); // Clear basket after successful submission
     } catch (error) {
-      alert('Could not send order.');
-      console.error("Failed to send order:", error);
+      alert('Could not send invoice.');
+      console.error("Failed to send invoice:", error);
     } finally {
       setIsLoading(false); // Stop loader in any case
     }
@@ -71,7 +71,7 @@ const OrderCreate = () => {
 
   // Render the component UI
   return (
-    <Card title="Create Order">
+    <Card title="Create Invoice">
       {loading && <p>Loading products...</p>}
       {error && <p>Error fetching products: {error.message}</p>}
       {!loading && !error && (
@@ -88,11 +88,11 @@ const OrderCreate = () => {
             <div className="flex justify-center mt-4">
               <button 
                 className="btn btn-primary max-w-xs mt-4" 
-                onClick={handleSendOrder}
+                onClick={handleCreateInvoice}
                 disabled={isLoading}
               >
                 {isLoading && <span className="loading loading-ball loading-xs"></span>}
-                Send Order
+                Create Invoice
               </button>
             </div>
           )}
@@ -102,4 +102,4 @@ const OrderCreate = () => {
   );
 };
 
-export default OrderCreate;
+export default InvoiceCreate;

@@ -1,0 +1,22 @@
+.logo-wrapper {
+    position: relative;
+    display: inline-block; /* or block if your logo is not inline */
+    overflow: hidden; /* ensures the shine doesn't go outside the logo bounds */
+  }
+  
+  .logo-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%; /* start the effect from the left */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    transition: left 0.75s;
+  }
+  
+  .logo-wrapper:hover::after {
+    left: 125%; /* end the effect to the right */
+  }
+  

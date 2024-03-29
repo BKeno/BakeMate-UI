@@ -20,7 +20,7 @@ const BasketTable = ({ basket, removeFromBasket }) => {
     <tr key={index} className="border-b border-bakery-cream">
       <td>{item.name}</td>
       <td>{item.quantity}</td>
-      <td>{item.totalPrice}</td>
+      <td className='text-right'>{item.totalPrice}</td>
       <td>
         <button onClick={() => removeFromBasket(item.id)} className="btn btn-error btn-xs">
           Remove
