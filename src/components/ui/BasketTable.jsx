@@ -1,5 +1,4 @@
 // components/ui/BasketTable.jsx
-
 import PropTypes from 'prop-types';
 
 const BasketTable = ({ basket, removeFromBasket }) => {

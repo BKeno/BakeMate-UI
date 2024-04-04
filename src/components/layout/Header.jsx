@@ -5,15 +5,15 @@ import './Header.css'
 const Header = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
-  return (
-    <nav className="bg-white/50 backdrop-blur-md shadow-lg">
+  return ( 
+    <nav className="bg-white/50 backdrop-blur-sm shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
       <div className="logo-wrapper">
       <img src="/logo.png" alt="Bakery Logo" className="h-12 w-auto" />
       </div>
         <Link to="/" className="flex justify-center items-center flex-grow">
         <div className="logo-wrapper">
-          <h1 className="p-2 text-4xl font-handwritten text-bakery-brown">BakeMate</h1>
+          <h1 className="p-2 text-4xl font-sans text-bakery-brown">BakeMate</h1>
           </div>
         </Link>
           <button

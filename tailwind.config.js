@@ -9,7 +9,11 @@ export default {
     extend: {
       fontFamily: {
         'body': ['Inter', 'sans-serif'],
-        'handwritten': ['Great Vibes', 'cursive']
+        'handwritten': ['Great Vibes', 'cursive'],
+        'sans': ['Montserrat', 'sans-serif'],
+      },
+      letterSpacing: {
+        widest: '.25em' 
       },
       colors: {
         'bakery-cream': '#f5f5dc',

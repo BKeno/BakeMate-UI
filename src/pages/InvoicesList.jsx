@@ -19,7 +19,13 @@ const InvoicesList = () => {
   // Adjust column definitions as necessary for invoices
   const columns = [
     { header: 'ID', accessor: 'id' },
-    { header: 'Date', accessor: item => new Date(item.invoiceDate).toLocaleDateString() },
+    { 
+      header: 'Date', 
+      accessor: item => new Date(item.invoiceDate).toLocaleDateString('hu-HU', {
+        month: '2-digit',
+        day: '2-digit',
+      }).replace(' ', '')
+    },
     { header: 'User', accessor: 'invoicingPerson' },
     { header: 'Name', accessor: 'productName' },
     { header: 'No', accessor: 'quantity', className: 'text-right' },

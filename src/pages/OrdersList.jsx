@@ -18,7 +18,13 @@ const OrdersList = () => {
 
   const columns = [
     { header: 'ID', accessor: 'id' },
-    { header: 'Date', accessor: item => new Date(item.orderDate).toLocaleDateString() },
+    { 
+      header: 'Date', 
+      accessor: item => new Date(item.orderDate).toLocaleDateString('hu-HU', {
+        month: '2-digit',
+        day: '2-digit',
+      }).replace(' ', '')
+    },
     { header: 'User', accessor: 'orderingPerson' },
     { header: 'Name', accessor: 'productName' },
     { header: 'No', accessor: 'quantity', className: 'text-right' },
