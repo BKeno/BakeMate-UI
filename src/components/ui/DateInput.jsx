@@ -10,7 +10,7 @@ const DateInput = ({ label, value, onChange }) => {
         type="date"
         value={value}
         onChange={onChange}
-        className="input input-bordered w-full bg-white bg-opacity-20 border-primary focus:border-bakery-focus focus:outline-none"
+        className="input input-bordered w-full bg-white bg-opacity-20 border-bakery-gold focus:border-bakery-focus focus:outline-none"
       />
     </div>
   );

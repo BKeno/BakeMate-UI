@@ -56,7 +56,7 @@ const OrderForm = ({ products, addToBasket, basket, selectedDate, setSelectedDat
     <select
       value={selectedProduct}
       onChange={(e) => setSelectedProduct(Number(e.target.value))}
-      className="select select-bordered w-full bg-white bg-opacity-20 border-primary focus:border-bakery-focus focus:outline-none"
+      className="select select-bordered w-full bg-white bg-opacity-20 border-bakery-gold focus:border-bakery-focus focus:outline-none"
     >
       {products.map((product) => (
         <option key={product.id} value={product.id}>
@@ -75,7 +75,7 @@ const OrderForm = ({ products, addToBasket, basket, selectedDate, setSelectedDat
       type="number"
       value={quantity}
       onChange={(e) => setQuantity(Number(e.target.value))}
-      className="input input-bordered w-full max-w-xs bg-white bg-opacity-20 border-primary focus:border-bakery-focus focus:outline-none"
+      className="input input-bordered w-full max-w-xs bg-white bg-opacity-20 border-bakery-gold focus:border-bakery-focus focus:outline-none"
       min="1"
     />
   </div>
